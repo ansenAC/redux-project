@@ -1,0 +1,45 @@
+{
+    "code": 0,
+    "msg": "该课程没有权限",
+    "data": {
+        "teacher": {
+            "avatar": "http://img.gsxservice.com/1146829_fh6sja9t.jpeg",
+            "name": "沈老师",
+            "number": "120321321"
+        },
+        "user": {
+            "avatar": "http://img.gsxservice.com/1146829_fh6sja9t.jpeg",
+            "name": "李二三",
+            "number": "120321321"
+        },
+        "course": {
+            "name": "测试一下云端录制"
+        },
+        "play_info": {
+            "cover": "http://test-img.gsxservice.com/00-upload/image-test/71662_5bed7a19909fe36f4d003ad96811d71b_ixxyXfId.jpg",
+            "fid": "72001",
+            "urls": [{
+                "cdn": "dl",
+                "definition": "std",
+                "height": 480,
+                "url": "http://ddl-video.genshuixue.com/vod/1476547_71aaa18f54191a1432344dcb97ed6e58_LP0fNvsP.mp4?dlSecret=e405e527843fa87867a2c6776bc7697c&dlTime=1458635981",
+                "width": 640
+            }, {
+                "cdn": "dl",
+                "definition": "high",
+                "height": 720,
+                "url": "http://ddl-video.genshuixue.com/test/71522_ff0e3c71598b61479c85ced5e3d9d3e0_TDXNr7of.mp4?dlSecret=32df8a3b96a7e9fffcfb34481eca6e45&dlTime=1455862914",
+                "width": 960
+            }, {
+                "cdn": "dl",
+                "definition": "super",
+                "height": 960,
+                "url": "http://ddl-video.genshuixue.com/test/71522_a10cd3c9584f99caa4aa1f0baf369cd9_nbaBMqRF.mp4?dlSecret=1c1c960bf3146d25e66bbcfde6756365&dlTime=1455862914",
+                "width": 1280
+            }]
+        },
+        "signal_file": {
+            "prefix": "/live"
+        }
+    }
+}

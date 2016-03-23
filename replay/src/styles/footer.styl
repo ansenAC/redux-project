@@ -1,0 +1,186 @@
+#footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    user-select: none;
+
+    height: $class-panel-footer-height;
+    line-height: $class-panel-footer-height;
+    background-color: $class-panel-footer-bg;
+
+    transition-property: bottom opacity;
+    transition-duration: 0.4s;
+
+    border-top: 1px solid;
+    border-color: rgba(255, 255, 255, 0.1);
+
+    color: #BDC6CF;
+
+    .icon-logo {
+        margin-left: 15px;
+        vertical-align: middle;
+    }
+}
+
+footer-icon() {
+    margin-right: 10px;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-top: -2px;
+    cursor: pointer;
+    transition: color .2s;
+    width: 20px;
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+footer-bar-handle() {
+    width: 11px;
+    height: 11px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    transition: box-shadow .4s;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.5);
+    }
+    &:active {
+        box-shadow: none;
+    }
+}
+
+footer-duration-bar() {
+    background-color: #FD8C03;
+    border-radius: 4px;
+    position: absolute;
+}
+
+.player-controls {
+    display: inline-block;
+    margin-left: 100px;
+    font-weight: bold;
+
+    .current-time,
+    .duration,
+    .player-seek-bar-wrapper {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    // 部分分辨率的电脑下适配有问题
+    // .current-time,
+    // .duration {
+    //     width: 45px;
+    // }
+
+    .player-seek-bar-wrapper {
+        margin: 0 10px;
+        width: 300px;
+    }
+
+    .icon-play-o,
+    .icon-pause-o {
+        footer-icon();
+        font-weight: bold;
+    }
+}
+
+.player-seek {
+    position: relative;
+    .player-seek-bar {
+        height: 4px;
+        background-color: #41464A;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .tooltip-trigger {
+        height: 11px;
+    }
+
+    .duration-bar {
+        footer-duration-bar();
+        height: 4px;
+        cursor: pointer;
+    }
+
+    .seek-handle {
+        footer-bar-handle();
+        top: -3px;
+    }
+}
+
+.slider-tooltip-popup {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-top: -5px;
+
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.volume-controls {
+    display: inline-block;
+    margin-left: 25px;
+    position: relative;
+
+    .icon {
+        footer-icon();
+    }
+
+    .volume-bar-layer {
+        position: absolute;
+        width: 26px;
+        height: 105px;
+        display: none;
+        line-height: 105px;
+        bottom: $class-panel-footer-height + 2;
+        left: -3px;
+        text-align: center;
+        background-color: #0a0b0d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.volume-bar {
+    display: inline-block;
+    width: 4px;
+    height: 80px;
+    vertical-align: middle;
+    background-color: #41464A;
+    border-radius: 4px;
+    position: relative;
+
+    .duration-bar {
+        footer-duration-bar();
+        width: 4px;
+        bottom: 0;
+    }
+
+    .volume-handle {
+        footer-bar-handle();
+        left: -4px;
+        width: 10px;
+        height: 10px;
+        margin-bottom: -5px;
+        margin-left: 1px;
+        bottom: 0;
+    }
+}

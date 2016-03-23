@@ -1,0 +1,48 @@
+@import "./whiteboard.styl";
+
+#class-panel {
+
+    background: url(../image/class-panel-bg.jpg);
+    background-image: -webkit-image-set(
+        url(../image/class-panel-bg@2x.jpg) 2x
+    );
+
+    position: absolute;
+    top: 0;
+    right: $message-panel-width + $media-panel-width;
+    bottom: 0;
+    left: 0;
+
+    user-select: none;
+
+    .recording-indicator {
+        color: $brand-error;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        display: none;
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        span {
+            font-size: 16px;
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &.user-doc {
+        .prev-page,
+        .next-page {
+            display: none;
+        }
+
+        .tool-bar {
+            display: none;
+        }
+    }
+}

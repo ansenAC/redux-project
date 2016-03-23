@@ -1,0 +1,56 @@
+@import "./common/reset.styl";
+@import "./common/variable.styl";
+@import "./common/icon.styl";
+@import "./common/button.styl";
+@import "./common/mixin.styl";
+@import "./common/animation.styl";
+@import "./common/component";
+
+html,
+body {
+    background-color: #FFF;
+    height: 100%;
+    font-size: 13px;
+    overflow: hidden !important;
+
+    font-family: $font-family-text;
+    line-height: 1.1;
+    gradient-radial(#fafafa, #d9d9d9);
+}
+
+#main {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 100%;
+    min-width: 1085px;
+    min-height: 240px;
+}
+
+#class-panel {
+    > .whiteboard {
+        transition-duration: 0.3s;
+        transition-property: opacity, right, bottom;
+        transition-timing-function: ease-in;
+    }
+}
+
+#class-panel,
+.media-panel,
+.message-panel {
+    transition-duration: 0.4s;
+    transition-property: right, bottom;
+}
+
+@import "./loadingPanel.styl";
+@import "./messagePanel.styl";
+@import "./noticePanel.styl";
+@import "./classPanel.styl";
+@import "./mediaPanel.styl";
+@import "./inputPanel.styl";
+@import "./chatPanel.styl";
+@import "./footer.styl";
+@import "./userTab.styl";

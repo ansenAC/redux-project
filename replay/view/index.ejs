@@ -1,0 +1,41 @@
+{{ strip }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ block name="data" }}
+
+        {{ $origin = rtrim($site_config.baseUri, '/') }}
+        {{ $static_origin = rtrim($site_config.staticBaseLiveUri, '/') }}
+
+        {{ $origin_http = $origin|replace:"https://":"http://" }}
+        {{ $origin_https = $origin|replace:"http://":"https://" }}
+
+        {{ $static_origin_http = $static_origin|replace:"https://":"http://" }}
+        {{ $static_origin_https = $static_origin|replace:"http://":"https://" }}
+
+        {{ if $origin == $origin_https }}
+            {{ $is_https = true }}
+        {{ else }}
+            {{ $is_https = false }}
+        {{ /if }}
+
+        {{ $env = $site_config.env }}
+
+    {{ /block }}
+
+    <meta charset="UTF-8">
+    <title>录播教室</title>
+     <% for (var css in htmlWebpackPlugin.files.css) { %>
+          <link href="{{ $static_origin }}/asset/playback/<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+      <% } %>
+</head>
+<body>
+    <div id="main"></div>
+     <% for (var js in htmlWebpackPlugin.files.js) { %>
+          <script type="text/javascript" src="{{ $static_origin }}/asset/playback/<%= htmlWebpackPlugin.files.js[js] %>"></script>
+      <% } %>
+</body>
+</html>
+
+{{ /strip }}

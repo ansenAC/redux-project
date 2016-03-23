@@ -1,0 +1,148 @@
+.user-tab {
+    position: absolute;
+    top: 0;
+    bottom: 192px;
+    width: 100%;
+
+    .nav-item {
+        width: 50%;
+
+        float: left;
+        padding: 9px 0;
+        text-align: center;
+        border-bottom: 1px solid #F5F5F5;
+        cursor: pointer;
+        position: relative;
+
+        transition-duration: 0.2s;
+        transition-property: border-color, box-shadow;
+
+        small {
+            // color: #D8D8D8;
+            color: #666;
+            font-size: 12px;
+        }
+
+        &.active {
+            border-bottom-color: #FFAA00;
+            box-shadow: inset 0 -1px 0 0 $brand-primary;
+        }
+    }
+
+    .tab-content {
+        position: absolute;
+        top: 33px;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .tab-panel {
+        position: absolute;
+        top: 3000px;
+
+        &.active {
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+    }
+
+    .apply-bubble {
+        background-color: red;
+        border-radius: 4px;
+        color: #FFF;
+        display: none;
+        font-size: 12px;
+        padding: 3px 5px;
+
+        position: absolute;
+        top: -3px;
+        right: 8px;
+
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .tab-nav {
+        clearfix();
+        user-select: none;
+    }
+}
+
+
+
+.teacher-player + .user-tab {
+    top: $camera-player-height;
+    bottom: 0;
+}
+
+.user-item {
+
+    padding: 13px 10px 13px 50px;
+    height: 16px;
+    line-height: 17px;
+    box-sizing: content-box;
+    position: relative;
+
+    transition: 0.2s background-color;
+
+    &.user-hide {
+        display: none;
+    }
+
+    .avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        position: absolute;
+        left: 10px;
+        top: 6px;
+    }
+
+    strong {
+        display: inline-block;
+        max-width: 120px;
+        vertical-align: top;
+        ellipsis();
+    }
+
+    label {
+        color: #FFF;
+        font-size: 12px;
+        padding: 2px 4px;
+        margin-left: 5px;
+    }
+
+    &[data-role="teacher"] {
+        label {
+            background-color: $brand-teacher;
+        }
+    }
+
+    &[data-role="assistant"] {
+        label {
+            background-color: $brand-assistant;
+        }
+    }
+    &[data-role="guest"] {
+        label {
+            background-color: $brand-guest;
+        }
+    }
+
+    &:nth-child(odd) {
+        background-color: #fafafa;
+    }
+
+    .status {
+        float: right;
+    }
+
+    .icon-end-type {
+        color: #6D6D6D;
+    }
+}

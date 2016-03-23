@@ -1,0 +1,116 @@
+#loading > div {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+}
+
+#loading .logo {
+    background: url(../image/logo-loading.png) no-repeat 50% 0;
+    background-image: -webkit-image-set(
+        url(../image/logo-loading@2x.png) 2x
+    );
+    width: 329px;
+    height: 134px;
+}
+
+#loading {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    // 确保位置最高，不会被 info 弹出来
+    z-index: $media-zindex;
+
+    user-select: none;
+
+    gradient-radial(#fafafa, #d9d9d9);
+
+    > div {
+        color: #FFF;
+        text-align: center;
+
+        width: 540px;
+        margin-left: -270px;
+        margin-top: -82px;
+    }
+
+    .loading-hint {
+        width: 150px;
+        text-align: center;
+        font-size: 16px;
+        margin: 10px auto 0 auto;
+        color: #999;
+    }
+
+    .logo {
+        display: inline-block;
+    }
+
+    .progress {
+        background-color: #d8d9d8;
+        height: 4px;
+        width: 485px;
+        margin-top: 20px;
+        text-align: left;
+        position: relative;
+    }
+
+    .progress-bar {
+        background-color: $brand-primary;
+        height: 100%;
+        width: 0;
+    }
+
+    .progress-text {
+        font-size: 18px;
+        color: #666;
+        position: absolute;
+        right: -55px;
+        top: -7px;
+    }
+
+    .progress-desc {
+        text-align: center;
+        color: #666;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .timeout {
+        color: #666;
+        margin-top: 20px;
+        display: none;
+        font-size: 18px;
+    }
+
+    .logs {
+        display: none;
+        .actions {
+            .hide {
+                display: none;
+            }
+            &.showed {
+                .hide {
+                    display: inline-block;
+                }
+                .show {
+                    display: none;
+                }
+            }
+        }
+        margin-top: 20px;
+        text-align: center;
+        .content {
+            display: none;
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.5em;
+            height: 92px;
+            overflow-y: auto;
+            user-select: text;
+        }
+    }
+}

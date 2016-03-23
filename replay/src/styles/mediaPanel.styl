@@ -1,0 +1,41 @@
+@import "./userPlayer.styl";
+
+.media-panel {
+
+    position: absolute;
+    top: 0;
+    right: $message-panel-width;
+    bottom: $class-panel-footer-height;
+    width: $media-panel-width;
+
+    .panel-wrapper {
+        background-color: $media-panel-bg-color;
+        box-shadow: $media-panel-box-shadow;
+    }
+
+    .scroll-panel {
+        height: 100%;
+    }
+
+    &.folded{
+        .my-player {
+            overflow: visible;
+            .btn-fold-unfold {
+                top: -18px;
+            }
+            .action-layer,
+            .user-name {
+                display: none;
+            }
+            &,
+            .camera-player {
+                height: 0;
+            }
+        }
+        .scroll-panel,
+        .user-tab {
+            bottom: 0;
+        }
+    }
+
+}

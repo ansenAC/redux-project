@@ -1,0 +1,108 @@
+#class-panel {
+    
+    user-select(none);
+
+    > .whiteboard {
+
+        background: url(../image/doc-bg.png) no-repeat 50% 50%;
+        background-image: -webkit-image-set(
+            url(../image/doc-bg@2x.png) 2x
+        );
+
+        position: absolute;
+        top: $class-panel-whiteboard-gap-vertical;
+        bottom: $class-panel-footer-height + $class-panel-whiteboard-gap-vertical;
+        left: $class-panel-whiteboard-gap-horizontal;
+        right: $class-panel-whiteboard-gap-horizontal;
+
+        .scroll-track {
+            right: -8px;
+        }
+    }
+
+    .container {
+
+        font-size: 0;
+        height: 100%;
+        overflow: hidden;
+
+        text-align: center;
+
+    }
+
+    .family
+    .user-family {
+
+        width: 100%
+
+        transition-property: width, height, top, left;
+        transition-duration: 0.4s;
+
+        img,
+        canvas {
+            width: 100%;
+        }
+        
+        canvas {
+            height: 100%;
+        }
+
+        position: absolute;
+
+        .doc-image {
+            display: none;
+            &.active {
+                display: inline;
+            }
+        }
+
+    }
+
+    .family
+    .user-family {
+
+        line-height: 0;
+        position: relative;
+
+        canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+    }
+
+    .loading-panel {
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+}
+
+.canvas-textarea {
+    position: absolute;
+
+    border: 0;
+    border-bottom: 1px dashed transparent;
+    background-color: transparent;
+    padding: 0;
+    resize: none;
+    outline: none;
+    height: 1.4em;
+    line-height: 1.4;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.no-painter {
+
+    canvas {
+        cursor: default !important;
+    }
+
+}

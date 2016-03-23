@@ -1,0 +1,164 @@
+.message-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 40px;
+    width: 280px;
+
+    z-index: $message-zindex;
+}
+
+.panel-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    box-shadow: -2px 0px 6px rgba(0,0,0,0.1);
+
+    > .btn-toggle {
+
+        &:before {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            border: 15px solid #f0f0f0;
+            border-right-color: transparent !important;
+            border-bottom-color: transparent !important;
+
+            transition: 0.2s border-color;
+        }
+
+
+        color: #9e9e9e;
+        cursor: pointer;
+        font-size: 12px;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        transition: 0.2s color;
+
+        z-index: $media-zindex + 1;
+
+        &:hover {
+
+            color: #fff;
+
+            &:before {
+                border-color: $brand-primary;
+            }
+
+        }
+
+        &:active {
+            color: #ebebeb;
+            &:before {
+                border-color: #eb8d00;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            top: 5px;
+            left: 2px;
+
+            z-index: $zindex-huge + 2;
+        }
+
+        &.pull {
+            .icon-caret-right {
+                display: none;
+            }
+        }
+        &.push {
+            .icon-caret-left {
+                display: none;
+            }
+        }
+    }
+
+    > .wrapper {
+        height: 100%;
+    }
+
+    .body {
+        opacity: 1;
+        position: absolute;
+        top: $padding-vertical;
+        right: $padding-horizontal;
+        bottom: $padding-vertical;
+        left: $padding-horizontal;
+    }
+
+    h2 {
+        opacity: 0;
+        color: #BBB;
+        margin-top: 42px;
+        margin-left: 8px;
+        width: 1em;
+    }
+
+    .body,
+    h2 {
+        transition: 0.2s opacity;
+    }
+}
+
+.media-panel,
+.message-panel {
+    &.fold {
+
+        user-select: none;
+
+        .body {
+            margin-left: 300px;
+        }
+        h2 {
+            opacity: 1;
+        }
+        .btn-gift {
+            display: none;
+        }
+    }
+}
+
+.emotion-tooltip {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-top: -5px;
+
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+
+
+.message-panel {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: $class-panel-footer-height;
+    width: $message-panel-width;
+
+    .panel-wrapper {
+        background-color: $message-panel-bg-color;
+        box-shadow: $message-panel-box-shadow;
+    }
+
+    &.fold {
+        right: -250px;
+    }
+}
+

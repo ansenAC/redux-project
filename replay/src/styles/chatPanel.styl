@@ -1,0 +1,139 @@
+.chat-panel {
+    position: absolute;
+    top: 51px;
+    right: 0;
+    bottom: $input-control-height + 8;
+    left: 0;
+
+    transition: 0.3s top ease-in;
+
+    .scroll-track {
+        right: 0px;
+    }
+}
+
+.message-list {
+
+    &:empty {
+        background: url(../image/message-list-empty.png) no-repeat 50% 50%;
+        background-image: -webkit-image-set(
+            url(../image/message-list-empty@2x.png) 2x
+        );
+    }
+
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+}
+
+.message-reminder {
+
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+
+    background-color: $brand-primary;
+    border-radius: 3px;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 3px 5px 4px;
+    user-select: none;
+
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.message-item {
+
+    font-size: 12px;
+    margin-top: 15px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &[data-role="teacher"],
+    &[data-role="assistant"] {
+        .content {
+            background-color: $message-content-admin-bg-color;
+        }
+
+        .content:after {
+            border-top-color: $message-content-admin-bg-color;
+            border-right-color: $message-content-admin-bg-color;
+        }
+    }
+
+    .time {
+        color: #DADADA;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .avatar {
+        float: left;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .header {
+        color: #9E9E9E;
+        margin-bottom: 6px;
+
+        > span {
+            vertical-align: top;
+        }
+    }
+
+    .icon-end-type,
+    .number {
+        margin-left: 10px;
+    }
+    .number {
+        color: $brand-primary;
+    }
+
+    .name {
+        max-width: 10em;
+        display: inline-block;
+        ellipsis();
+    }
+
+    .content {
+        background-color: $message-content-bg-color;
+        border-radius: 4px;
+        color: #3d3d3d;
+        display: inline-block;
+        max-width: 208px;
+
+        line-height: 1.5;
+        padding: 5px 9px;
+
+        word-wrap: break-word;
+        word-break: break-all;
+
+        position: relative;
+
+        &:after {
+
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: -8px;
+
+            border: 4px solid transparent;
+
+            border-top-color: $message-content-bg-color;
+            border-right-color: $message-content-bg-color;
+
+        }
+    }
+
+}

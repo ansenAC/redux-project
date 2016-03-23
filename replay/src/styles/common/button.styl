@@ -1,0 +1,101 @@
+/**
+ * 按钮
+ */
+.btn-pure,
+.btn-default,
+.btn-primary,
+.btn-info,
+.btn-warning {
+
+    border: 1px solid transparent;
+    border-radius: 2px;
+    display: inline-block;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1.5384615384615385;
+    padding: 4px 14px;
+    text-align: center;
+    vertical-align: top;
+    outline: none;
+
+    user-select: none;
+    transition-duration: 0.4s;
+    transition-property: background-color, box-shadow;
+
+    ellipsis();
+
+    &.active,
+    &:active {
+        transition: 0.2s box-shadow;
+        color: #EEE;
+        color: rgba(255,255,255,0.7);
+
+        box-shadow: inset 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    &.tiny {
+        padding: 2px 10px;
+    }
+    &.small {
+        padding: 4px 12px;
+    }
+    &.large {
+        padding: 6px 16px;
+    }
+    &.huge {
+        padding: 9px 18px;
+    }
+
+}
+.btn-default {
+    border-color: #c2c1c0;
+    color: #6D6D6D;
+    gradient-vertical(#FFF, #f0f1f2);
+    &:hover {
+        gradient-vertical(#f0f1f2, #FFF);
+    }
+    &.active,
+    &:active {
+        color: #a2a2a3;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+        gradient-vertical(#e2e3e5, #efefef);
+    }
+
+}
+.btn-primary {
+    border-color: #db851f;
+    gradient-vertical(#ffa400, #ff7b00);
+    &:hover {
+        gradient-vertical(#e17800, #e59200);
+    }
+    &.active,
+    &:active {
+        gradient-vertical(#e57900, #e59200);
+    }
+
+}
+.btn-info {
+    border-color: #444;
+    gradient-vertical(#6a6a6b, #363738);
+    &:hover {
+        gradient-vertical(#818383, #4c4e4f);
+    }
+    &.active,
+    &:active {
+        background-image: none;
+        background-color: #36373b;
+    }
+}
+.btn-warning {
+    border-color: #e04247;
+    gradient-vertical(#f96f75, #f65056);
+    &:hover {
+        gradient-vertical(#e06469, #dd484d);
+    }
+    &.active,
+    &:active {
+        background-image: none;
+        gradient-vertical(#dd474c, #e06368);
+    }
+}
